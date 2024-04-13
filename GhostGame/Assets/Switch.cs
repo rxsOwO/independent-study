@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Switch : MonoBehaviour
 {
-    [SerializeField] Camera camera1;
-    [SerializeField] Camera camera2;
+    [SerializeField] Transform mainCamera;
+    [SerializeField] CameraFollow camFollow;
+    [SerializeField] Transform camera1;
+    [SerializeField] Transform camera2;
     [SerializeField] PlayerMovement Bloopy;
     [SerializeField] PlayerMovement Gloopy;
 
@@ -13,18 +15,17 @@ public class Switch : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E)) {
             if(Bloopy.active) {
+                
+                camFollow.target = camera2;
                 Bloopy.active = false;
                 Gloopy.active = true;
-                camera1.enabled = false;
-                camera2.enabled = true;
                 Bloopy.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
                 Gloopy.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
             }
             else {
+                camFollow.target = camera1;
                 Bloopy.active = true;
                 Gloopy.active = false;
-                camera1.enabled = true;
-                camera2.enabled = false;
                 Bloopy.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
                 Gloopy.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             }
