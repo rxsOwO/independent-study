@@ -19,7 +19,7 @@ public class Switch : MonoBehaviour
                 camFollow.target = camera2;
                 Bloopy.active = false;
                 Gloopy.active = true;
-                Bloopy.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                Bloopy.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
                 Gloopy.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
             }
             else {
@@ -27,7 +27,7 @@ public class Switch : MonoBehaviour
                 Bloopy.active = true;
                 Gloopy.active = false;
                 Bloopy.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-                Gloopy.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                Gloopy.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
             }
         }
     }

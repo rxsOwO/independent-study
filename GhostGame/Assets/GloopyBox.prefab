@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6617365161034662406}
   - component: {fileID: 5511637787306993588}
   - component: {fileID: 7852949174796528705}
+  - component: {fileID: 5558904249733693416}
   m_Layer: 0
   m_Name: GloopyBox
   m_TagString: Untagged
@@ -146,3 +147,30 @@ MonoBehaviour:
   time: 0
   gridLayout: {fileID: 0}
   typename: Gloopy
+--- !u!50 &5558904249733693416
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4539740549637916052}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

@@ -14,10 +14,11 @@ public class BlockMovement : MonoBehaviour
     float journeyLength;
     float speed = 10f;
     public string typename;
+    public Reset reset;
     // Start is called before the first frame update
     void Start()
     {
-        
+        reset = FindObjectsOfType<Reset>()[0];
         cellPosition = gridLayout.WorldToCell(transform.position);
         Debug.Log(cellPosition);
         transform.position = gridLayout.GetCellCenterWorld(cellPosition);
@@ -58,6 +59,8 @@ public class BlockMovement : MonoBehaviour
         if(time>= 0.5f && other.gameObject.name == typename) {
             bool can = true;
             if(other.transform.position.x > transform.position.x+0.5 && can) { 
+                reset.moves -= 1;
+                reset.text.text = reset.moves.ToString();
                 time=0f;               
                 can=false;
                 Debug.DrawRay(new Vector2(transform.position.x-0.5f, transform.position.y), Vector2.left, Color.red);
@@ -77,6 +80,8 @@ public class BlockMovement : MonoBehaviour
 
             }
             if(other.transform.position.x < transform.position.x -0.5&& can) {
+                reset.moves -= 1;
+                reset.text.text = reset.moves.ToString();
                 time=0f;
                 Debug.DrawRay(new Vector2(transform.position.x+0.5f, transform.position.y), Vector2.right, Color.red);
                 RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x+0.5f, transform.position.y), Vector2.right, 0.5f);
@@ -94,6 +99,8 @@ public class BlockMovement : MonoBehaviour
                 }
             }
             if(other.transform.position.y < transform.position.y-0.5 && can) {
+                reset.moves -= 1;
+                reset.text.text = reset.moves.ToString();
                 time=0f;
                 Debug.DrawRay(new Vector2(transform.position.x, transform.position.y+0.5f), Vector2.up, Color.red);
                 RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y+0.5f), Vector2.up, 0.5f);
@@ -111,6 +118,8 @@ public class BlockMovement : MonoBehaviour
                 }
             }
             if(other.transform.position.y > transform.position.y+0.5 && can) {
+                reset.moves -= 1;
+                reset.text.text = reset.moves.ToString();
                 time=0f;
                 Debug.DrawRay(new Vector2(transform.position.x, transform.position.y-0.5f), Vector2.down, Color.red);
                 RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y-0.5f), Vector2.down, 0.5f);
