@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class ButtonScript : MonoBehaviour
 {
-    public GameObject Door; 
+    public GameObject Door;
+    public DoorScript DoorScr;
     public string Key;
+    public LightUpCable cable;
     // Start is called before the first frame update
     void Start()
     {
-        
+        DoorScr = Door.GetComponent<DoorScript>();
     }
 
     // Update is called once per frame
@@ -22,22 +24,29 @@ public class ButtonScript : MonoBehaviour
         Debug.Log(col.gameObject.name == Key);
         if(col.gameObject.name == Key || col.gameObject.name == Key + "Box") {
             if(Key == "Gloopy") {
-                Door.GetComponent<DoorScript>().hasGloopy = true;
+                DoorScr.hasGloopy = true;
+                cable.ColorOn();
             }
             if(Key == "Bloopy") {
-                Door.GetComponent<DoorScript>().hasBloopy = true;
+                DoorScr.hasBloopy = true;
+                cable.ColorOn();
             }  
         }
     }
     public void OnTriggerExit2D(Collider2D col) {
         Debug.Log(col);
+        if(cable) {
         if(col.gameObject.name == Key + "Box" || col.gameObject.name == Key) {
             if(Key == "Gloopy") {
-                Door.GetComponent<DoorScript>().hasGloopy = false;
+                DoorScr.hasGloopy = false;
+                cable.ColorOff();
             }
             if(Key == "Bloopy") {
-                Door.GetComponent<DoorScript>().hasBloopy = false;
+                DoorScr.hasBloopy = false;
+                cable.ColorOff();
             }  
+        } 
         }
+
     }
 }

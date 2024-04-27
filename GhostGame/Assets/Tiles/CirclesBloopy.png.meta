@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 88687e463b3504b4ab7128c309bb9d56
+guid: 774e7dfe6640f4a9db8d4ddb8dd815e8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: flags_0
+      name: CirclesBloopy_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3eba105935a424818a50481f23383eb6
-      internalID: 1376139470
+      spriteID: 8af731249bcb64d9f838ab7096d2073f
+      internalID: 1138972835
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flags_1
+      name: CirclesBloopy_1
       rect:
         serializedVersion: 2
         x: 0
@@ -158,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18563b8c9a42442a38acf23ee11cf97e
-      internalID: 1467438965
+      spriteID: 91a8af31be994404b889c253509a864b
+      internalID: -276649028
       vertices: []
       indices: 
       edges: []
@@ -175,8 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      flags_0: 1376139470
-      flags_1: 1467438965
+      CirclesBloopy_0: 1138972835
+      CirclesBloopy_1: -276649028
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
