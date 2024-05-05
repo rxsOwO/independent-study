@@ -10,6 +10,10 @@ public class DoorScript : MonoBehaviour
     public GameObject thing2;
     public GameObject door;
 
+    public AudioSource audio;
+
+    public bool Open;
+
     void Update() {
         if(hasBloopy) {
             thing.SetActive(true);
@@ -25,8 +29,13 @@ public class DoorScript : MonoBehaviour
         }
         if(hasBloopy && hasGloopy) {
             door.SetActive(false);
+            if(!Open) {
+                audio.Play();
+                Open = true;
+            }
         }
         else {
+            Open = false;
             door.SetActive(true);
         }
     }

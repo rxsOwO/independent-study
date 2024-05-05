@@ -8,6 +8,8 @@ public class ButtonScript : MonoBehaviour
     public DoorScript DoorScr;
     public string Key;
     public LightUpCable cable;
+
+    public AudioSource blip;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,10 +28,18 @@ public class ButtonScript : MonoBehaviour
             if(Key == "Gloopy") {
                 DoorScr.hasGloopy = true;
                 cable.ColorOn();
+                if(!(DoorScr.hasBloopy && DoorScr.hasGloopy))
+                {
+                    blip.Play();
+                }
             }
             if(Key == "Bloopy") {
                 DoorScr.hasBloopy = true;
                 cable.ColorOn();
+                if(!(DoorScr.hasBloopy && DoorScr.hasGloopy))
+                {
+                    blip.Play();
+                }
             }  
         }
     }

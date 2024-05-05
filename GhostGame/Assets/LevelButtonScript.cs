@@ -15,7 +15,7 @@ public class LevelButtonScript : MonoBehaviour
     }
     public void LevelSelect() {
         if(PlayerPrefs.GetInt("highestLevel") >= level) {
-            SceneManager.LoadScene(gameObject.name);
+            SceneManager.LoadScene("Level" + gameObject.name);
         }
     }
 }

@@ -15,6 +15,8 @@ public class BlockMovement : MonoBehaviour
     float speed = 10f;
     public string typename;
     public Reset reset;
+
+    public AudioSource slide;
     // Start is called before the first frame update
     void Start()
     {
@@ -69,7 +71,7 @@ public class BlockMovement : MonoBehaviour
                 //transform.position = gridLayout.GetCellCenterWorld(cellPosition);
                 reset.moves -= 1;
                 reset.text.text = reset.moves.ToString();
-
+                slide.Play();
                 lerpGo = true;
                 startPos = transform.position;
                 lerpPosition = gridLayout.GetCellCenterWorld(cellPosition);
@@ -89,7 +91,7 @@ public class BlockMovement : MonoBehaviour
                 //transform.position = gridLayout.GetCellCenterWorld(cellPosition);
                 reset.moves -= 1;
                 reset.text.text = reset.moves.ToString();
-                
+                slide.Play();
                 lerpGo = true;
                 startPos = transform.position;
                 lerpPosition = gridLayout.GetCellCenterWorld(cellPosition);
@@ -107,7 +109,7 @@ public class BlockMovement : MonoBehaviour
                 //transform.position = gridLayout.GetCellCenterWorld(cellPosition);
                 reset.moves -= 1;
                 reset.text.text = reset.moves.ToString();
-
+                slide.Play();
                 lerpGo = true;
                 startPos = transform.position;
                 lerpPosition = gridLayout.GetCellCenterWorld(cellPosition);
@@ -125,7 +127,7 @@ public class BlockMovement : MonoBehaviour
                 //transform.position = gridLayout.GetCellCenterWorld(cellPosition);
                 reset.moves -= 1;
                 reset.text.text = reset.moves.ToString();
-
+                slide.Play();
                 lerpGo = true;
                 startPos = transform.position;
                 lerpPosition = gridLayout.GetCellCenterWorld(cellPosition);
