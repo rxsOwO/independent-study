@@ -26,6 +26,7 @@ public class SingleDoorScript : MonoBehaviour
         else {
             Open = false;
             door.SetActive(true);
+            thing.SetActive(false);
         }
     }
 }
