@@ -30,7 +30,7 @@ public class EndLevel : MonoBehaviour
 
         BloopyAnim.Play("Player_Death");
         GloopyAnim.Play("Player_Death");
-        Invoke("EndMenuActivate", 2.5f);
+        Invoke("EndMenuActivate", 1.2f);
     }
     public void EndMenuActivate() {
         PlayerPrefs.SetInt("lastSavedScene", SceneManager.GetActiveScene().buildIndex + 1);

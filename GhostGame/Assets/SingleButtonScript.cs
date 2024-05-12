@@ -27,7 +27,6 @@ public class SingleButtonScript : MonoBehaviour
         if(col.gameObject.name == Key || col.gameObject.name == Key + "Box" || Key == "Default") {
                 DoorScr.hasBloopy = true;
                 cable.ColorOn();
-                blip.Play(); 
         }
     }
     public void OnTriggerExit2D(Collider2D col) {
