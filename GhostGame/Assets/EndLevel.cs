@@ -34,8 +34,12 @@ public class EndLevel : MonoBehaviour
         GloopyAnim.Play("Player_Death");
         if(isEnd) {
             text.SetActive(true);
+            Invoke("EndMenuActivate", 3f); 
         }
-        Invoke("EndMenuActivate", 1.2f);
+        else {
+           Invoke("EndMenuActivate", 1.2f); 
+        }
+        
     }
     public void EndMenuActivate() {
         if(!isEnd) {
