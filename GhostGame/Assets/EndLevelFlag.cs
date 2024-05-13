@@ -19,4 +19,16 @@ public class EndLevelFlag : MonoBehaviour
             }
         }
     }
+    void OnTriggerExit2D(Collider2D other) {
+        if(other.gameObject.CompareTag(type)) {
+            if(type == "Bloopy") {
+                //other.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                parent.BloopyRb = null;
+            }
+            else {
+                //other.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                parent.GloopyRb = null;
+            }
+        }
+    }
 }
